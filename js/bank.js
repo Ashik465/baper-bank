@@ -9,6 +9,14 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
     
 // console.log( depositInBank);
 
+
+depositField.value = ''
+if(isNaN(currentDeposit)){
+    alert ('please enter your deposit amount')
+    return ;
+
+}
+
     const depositIn =document.getElementById('deposit-bank') ;
     const depositInBank = depositIn.innerText
 
@@ -28,7 +36,7 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
      balance.innerText=totalBalance;
 
 
-    depositField.value = ''
+    
 
 })
 
@@ -39,6 +47,14 @@ const withdraw = document.getElementById('withdraw')
 const withdrawField = withdraw.value ;
 const currentWithdraw = parseFloat(withdrawField)
 
+
+withdraw.value = ''
+
+if(isNaN(currentWithdraw)){
+    alert ('please enter your withdraw amount')
+    return ;
+
+}
 
 const withdrawIn = document.getElementById('withdraw-bank')
 const withdrawBank = withdrawIn.innerText
@@ -58,14 +74,11 @@ const balance=document.getElementById('balance');
          balance.innerText=totalBalance;
          withdrawIn.innerText = totalWithdraw ;
      }
-     else if(currentWithdraw ===' ') {
-           alert ('please enter your withdraw amount')
-     }
+    
      else {
            alert ('you do not have enough money')
      }
 
     
-     withdraw.value = ''
 
 })
